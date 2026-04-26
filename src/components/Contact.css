@@ -1,0 +1,136 @@
+.contact-section {
+  padding: var(--section-pad) 0 4rem;
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+  margin-bottom: 2.5rem;
+}
+
+/* Izquierda */
+.contact__left .section-label {
+  color: var(--terracota-light);
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--cream);
+  margin: 0.6rem 0 1.2rem;
+}
+
+.contact__title em {
+  font-style: italic;
+  color: var(--terracota-light);
+}
+
+.contact__sub {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--stone-light);
+  max-width: 36ch;
+}
+
+/* Derecha */
+.contact__right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact__email {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  color: var(--cream);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.contact__email::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--terracota-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.contact__email:hover::after {
+  transform: scaleX(1);
+}
+
+.contact__social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone-light);
+  transition: color 0.3s;
+}
+
+.contact__social-link:hover {
+  color: var(--terracota-light);
+}
+
+.contact__cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  border: 1px solid rgba(245, 240, 232, 0.2);
+  padding: 0.8rem 1.4rem;
+  border-radius: 2px;
+  width: fit-content;
+  transition: all 0.3s var(--ease-out);
+}
+
+.contact__cv:hover {
+  background: var(--terracota);
+  border-color: var(--terracota);
+}
+
+/* Footer */
+.contact__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__copy,
+.contact__made {
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .contact__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

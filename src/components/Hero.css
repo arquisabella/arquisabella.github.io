@@ -1,0 +1,231 @@
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+/* Textura SVG de papel */
+.hero__texture {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Bloque de color terracota en esquina */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(120px, 20vw, 260px);
+  height: clamp(120px, 20vw, 260px);
+  background: var(--terracota);
+  opacity: 0.08;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* Círculo decorativo */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -8vw;
+  left: -8vw;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  border: 1px solid var(--sand);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Línea vertical */
+.hero__line {
+  position: absolute;
+  left: max(2rem, calc((100vw - var(--container)) / 2 - 2rem));
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--sand) 20%, var(--sand) 80%, transparent);
+  opacity: 0.4;
+}
+
+/* Contenido */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+.hero__meta {
+  margin-bottom: 1.5rem;
+}
+
+.hero__meta-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracota);
+  font-weight: 500;
+}
+
+/* Título con animación letra a letra */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--espresso);
+  margin-bottom: 0.2em;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+.hero__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: letterIn 0.8s var(--ease-out) forwards;
+}
+
+.hero__letter--space {
+  width: 0.3em;
+}
+
+@keyframes letterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apellido en italica */
+.hero__title-last {
+  display: block;
+  font-style: italic;
+  color: var(--terracota);
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--stone);
+  margin-bottom: 3rem;
+  max-width: 44ch;
+}
+
+/* Botones */
+.hero__actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s var(--ease-out);
+}
+
+.hero__btn--primary {
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+.hero__btn--primary:hover {
+  background: var(--terracota);
+  transform: translateY(-2px);
+}
+
+.hero__btn--ghost {
+  color: var(--umber);
+  border: 1px solid var(--sand);
+}
+
+.hero__btn--ghost:hover {
+  border-color: var(--terracota);
+  color: var(--terracota);
+  transform: translateY(-2px);
+}
+
+/* Contador decorativo */
+.hero__count {
+  position: absolute;
+  right: max(2rem, calc((100vw - var(--container)) / 2));
+  bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  opacity: 0.35;
+}
+
+.hero__count span:first-child {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--terracota);
+}
+
+.hero__count span:last-child {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s var(--ease-out) forwards;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 50px;
+  background: var(--terracota);
+  animation: scrollPulse 2s 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.4); opacity: 0.4; }
+}
+
+.hero__scroll span {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+@media (max-width: 768px) {
+  .hero__count {
+    display: none;
+  }
+  .hero__title {
+    font-size: clamp(3.5rem, 14vw, 6rem);
+  }
+}
