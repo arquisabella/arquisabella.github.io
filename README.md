@@ -21,7 +21,7 @@ Abre tu navegador en: **http://localhost:5173**
 ## 📁 Estructura de carpetas
 
 ```
-isabella-portfolio/
+arquisabella/
 │
 ├── public/
 │   ├── images/
@@ -84,7 +84,7 @@ Abre el archivo **`src/data/projects.js`** — está comentado paso a paso.
 
 ## 🌐 Publicar en GitHub Pages
 
-1. Crea un repositorio en GitHub llamado `isabella-portfolio`
+1. Crea un repositorio en GitHub llamado `arquisabella`
 2. En `vite.config.js`, el `base` ya está configurado automáticamente
 3. Instala gh-pages:
    ```bash
