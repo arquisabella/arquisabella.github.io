@@ -116,7 +116,7 @@ Creo que un buen espacio no solo se ve bien —se siente. Por eso cada proyecto 
   instagram: "https://instagram.com/isabella.arquitectura",
   linkedin: "https://linkedin.com/in/isabella-abadia",
   cv: "/cv/isabella-abadia-cv.pdf",   // Coloca tu CV en public/cv/
-  photo: "./images/profile/isabella.jpeg", // Coloca tu foto en public/images/profile/
+  photo: "./public/images/profile/isabella.jpeg", // Coloca tu foto en public/images/profile/
 
   /**
    * SOFTWARE
