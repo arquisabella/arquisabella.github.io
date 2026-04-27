@@ -43,16 +43,16 @@ export const projects = [
     tags: ["Residencial", "Bioclimático", "Adobe", "Madera"],
     description:
       "Exploración de la arquitectura vernácula Guatemalana reinterpretada con principios bioclimáticos contemporáneos. La vivienda dialoga con el paisaje cafetero a través de su cubierta inclinada de teja de barro y sus patios interiores que regulan la temperatura de forma pasiva. Los materiales —adobe, guadua y madera local— generan una atmósfera cálida que conecta al habitante con la tierra.",
-    cover: "/images/projects/proyecto-1/cover.jpg",
+    cover: "./public/images/projects/proyecto-1/cover.jpg",
     images: [
-      "public/images/projects/proyecto-1/1.png",
-      "public/images/projects/proyecto-1/2.png",
-      "public/images/projects/proyecto-1/3.png",
-      "public/images/projects/proyecto-1/4.png",
-      "public/images/projects/proyecto-1/5.png",
-      "public/images/projects/proyecto-1/6.png",
-      "public/images/projects/proyecto-1/7.png",
-      "public/images/projects/proyecto-1/8.png",
+      "./public/images/projects/proyecto-1/1.png",
+      "./public/images/projects/proyecto-1/2.png",
+      "./public/images/projects/proyecto-1/3.png",
+      "./public/images/projects/proyecto-1/4.png",
+      "./public/images/projects/proyecto-1/5.png",
+      "./public/images/projects/proyecto-1/6.png",
+      "./public/images/projects/proyecto-1/7.png",
+      "./public/images/projects/proyecto-1/8.png",
       // Agrega más imágenes aquí: "/images/projects/proyecto-1/img-4.jpg",
     ],
     model3d: "public/models/proyecto-1/proyecto-1.glb",         // Click derecho en el modelo 3D → "Copiar ruta" y pégala aquí
@@ -116,7 +116,7 @@ Creo que un buen espacio no solo se ve bien —se siente. Por eso cada proyecto 
   instagram: "https://instagram.com/isabella.arquitectura",
   linkedin: "https://linkedin.com/in/isabella-abadia",
   cv: "/cv/isabella-abadia-cv.pdf",   // Coloca tu CV en public/cv/
-  photo: "public/images/profile/isabella.jpeg", // Coloca tu foto en public/images/profile/
+  photo: "./public/images/profile/isabella.jpeg", // Coloca tu foto en public/images/profile/
 
   /**
    * SOFTWARE
