@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF, useFBX, Environment, ContactShadows } from '@react-three/drei'
 import { projects } from '../data/projects'
@@ -13,7 +13,7 @@ function ImagePlaceholder({ label }) {
   )
 }
 
-/* ── Visor 3D — recibe distancia de cámara configurable ── */
+/* ── Visor 3D ── */
 function ModelViewer({ src, distance = 5 }) {
   if (!src) return null
   const ext = src.split('.').pop().toLowerCase()
@@ -53,10 +53,20 @@ function ModelViewer({ src, distance = 5 }) {
 function ProjectModal({ project, onClose }) {
   const [activeImg, setActiveImg] = useState(0)
   const [tab, setTab] = useState('gallery')
+  const touchStartX = useRef(null)
 
   const total = project.images.length
   const prev = () => setActiveImg(i => (i - 1 + total) % total)
   const next = () => setActiveImg(i => (i + 1) % total)
+
+  // Swipe táctil para móvil
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX }
+  const onTouchEnd   = (e) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev()
+    touchStartX.current = null
+  }
 
   useEffect(() => {
     const onKey = (e) => {
@@ -97,8 +107,12 @@ function ProjectModal({ project, onClose }) {
 
             {tab === 'gallery' ? (
               <>
-                {/* Imagen principal con flechas */}
-                <div className="modal__main-img">
+                {/* Imagen principal con swipe táctil */}
+                <div
+                  className="modal__main-img"
+                  onTouchStart={onTouchStart}
+                  onTouchEnd={onTouchEnd}
+                >
                   {project.images[activeImg]
                     ? <img src={project.images[activeImg]} alt={`${project.title} ${activeImg + 1}`} />
                     : <ImagePlaceholder label={`Imagen ${activeImg + 1}`} />}
@@ -112,7 +126,7 @@ function ProjectModal({ project, onClose }) {
                   )}
                 </div>
 
-                {/* Thumbnails — scroll horizontal si hay muchos */}
+                {/* Thumbnails con scroll horizontal */}
                 {total > 1 && (
                   <div className="modal__thumbs">
                     {project.images.map((img, i) => (
@@ -163,7 +177,7 @@ function ProjectModal({ project, onClose }) {
   )
 }
 
-/* ── Card — número con padding para 10+ proyectos ── */
+/* ── Card ── */
 function ProjectCard({ project, index, onClick }) {
   const num = String(index + 1).padStart(2, '0')
   return (
