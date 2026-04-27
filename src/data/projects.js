@@ -55,7 +55,7 @@ export const projects = [
       "images/projects/proyecto-1/8.png",
       // Agrega más imágenes aquí: "/images/projects/proyecto-1/img-4.jpg",
     ],
-    model3d: "public/models/proyecto-1/proyecto-1.glb",         // Click derecho en el modelo 3D → "Copiar ruta" y pégala aquí
+    model3d: "models/proyecto-1/proyecto-1.glb",         // Click derecho en el modelo 3D → "Copiar ruta" y pégala aquí
     cameraDistance: 15,     // Mayor el número, mayor el zoom out
     featured: true,
   },
