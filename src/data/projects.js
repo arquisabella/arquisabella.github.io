@@ -43,7 +43,7 @@ export const projects = [
     tags: ["Residencial", "Bioclimático", "Adobe", "Madera"],
     description:
       "Exploración de la arquitectura vernácula Guatemalana reinterpretada con principios bioclimáticos contemporáneos. La vivienda dialoga con el paisaje cafetero a través de su cubierta inclinada de teja de barro y sus patios interiores que regulan la temperatura de forma pasiva. Los materiales —adobe, guadua y madera local— generan una atmósfera cálida que conecta al habitante con la tierra.",
-    cover: "images/projects/proyecto-1/cover.jpg",
+    cover: "images/projects/proyecto-1/cover.png",
     images: [
       "images/projects/proyecto-1/1.png",
       "images/projects/proyecto-1/2.png",
@@ -69,11 +69,16 @@ export const projects = [
     tags: ["Estructura de Madera", "Espacio Público", "Sostenible"],
     description:
       "Intervención efímera en el Parque Arví que propone un lugar de encuentro y contemplación. La estructura de madera laminada cruzada (CLT) se ancla al terreno con mínima intervención, permitiendo que la luz del bosque se filtre a través de su cubierta calada. El proyecto explora la tensión entre lo construido y lo natural, invitando al visitante a detenerse y escuchar el paisaje.",
-    cover: "/images/projects/proyecto-2/cover.jpg",
+    cover: "/images/projects/proyecto-2/cover.png",
     images: [
-      "/images/projects/proyecto-2/img-1.jpg",
-      "/images/projects/proyecto-2/img-2.jpg",
-      "/images/projects/proyecto-2/img-3.jpg",
+      "images/projects/proyecto-2/1.png",
+      "images/projects/proyecto-2/2.png",
+      "images/projects/proyecto-2/3.png",
+      "images/projects/proyecto-2/4.png",
+      "images/projects/proyecto-2/5.png",
+      "images/projects/proyecto-2/6.png",
+      "images/projects/proyecto-2/7.png",
+      "images/projects/proyecto-2/8.png",
     ],
     model3d: null,
     cameraDistance: 4,     // Pabellón pequeño → un poco más cerca
@@ -89,11 +94,16 @@ export const projects = [
     tags: ["Comunitario", "Piedra", "Bahareque", "Participativo"],
     description:
       "Diseño participativo de un centro cultural para la comunidad campesina de Jardín. El programa —biblioteca, salón comunal y aulas taller— se organiza alrededor de una plaza cubierta que actúa como corazón social. La construcción en bahareque encementado y piedra del río respeta la tradición constructiva de la región, mientras que las grandes ventanas orientadas al norte garantizan luz natural difusa todo el año.",
-    cover: "/images/projects/proyecto-3/cover.jpg",
+    cover: "/images/projects/proyecto-3/cover.png",
     images: [
-      "/images/projects/proyecto-3/img-1.jpg",
-      "/images/projects/proyecto-3/img-2.jpg",
-      "/images/projects/proyecto-3/img-3.jpg",
+      "images/projects/proyecto-3/1.png",
+      "images/projects/proyecto-3/2.png",
+      "images/projects/proyecto-3/3.png",
+      "images/projects/proyecto-3/4.png",
+      "images/projects/proyecto-3/5.png",
+      "images/projects/proyecto-3/6.png",
+      "images/projects/proyecto-3/7.png",
+      "images/projects/proyecto-3/8.png",
     ],
     model3d: null,
     cameraDistance: 10,    // Equipamiento más grande → más alejado
